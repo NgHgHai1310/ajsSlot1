@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event){
             loadVideo(this.value);
         }
     }
-    loadVideo("den vau");
-})
+    loadVideo("Đen vâu");
+});
 
 var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
@@ -23,7 +23,8 @@ window.onclick = function(event) {
 }
 
 function loadVideo(keyword) {
-    var YOUTUBE_API = "https://content.googleapis.com/youtube/v3/search?q=" + keyword + "&type=video&maxResults=9&part=snippet&key=AIzaSyCO_f4mE8n4Pw1R0XN3xUZO1tXUAXHuCHc";
+    var YOUTUBE_API = "https://content.googleapis.com/youtube/v3/search?q=" + keyword + 
+    "&type=video&maxResults=9&part=snippet&key=AIzaSyCO_f4mE8n4Pw1R0XN3xUZO1tXUAXHuCHc";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", YOUTUBE_API, true);
     xhr.onreadystatechange = function(){
@@ -45,9 +46,8 @@ function loadVideo(keyword) {
 
             }
             document.getElementById("list-video").innerHTML = htmlContent;
-        } else if(this.readyState == 4){
+        } else if(this.readyState == 4)
             console.log("Fails");
-        }
     };
     xhr.send();
 }
